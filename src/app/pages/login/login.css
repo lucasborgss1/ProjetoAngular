@@ -1,0 +1,50 @@
+.container-form-login {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+  background-color: white;
+}
+
+.carro {
+  width: 700px;
+  filter: opacity(0.8);
+}
+
+.title {
+  font-size: 2rem;
+  color: #503c75;
+  margin-bottom: 1rem;
+}
+
+.form-login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-ford {
+  width: 150px;
+  margin-bottom: 3rem;
+}
+
+@media screen and (max-width: 768px) {
+  .container-form-login {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carro {
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: 2rem;
+  }
+
+  .form-login {
+    width: 100%;
+    margin-right: 0;
+  }
+}
