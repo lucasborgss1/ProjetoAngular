@@ -1,0 +1,50 @@
+<section class="d-flex flex-column align-items-center">
+  <h1 style="color: #1b357e">Dashboard Ford</h1>
+  <div class="container d-flex flex-wrap justify-content-between gap-3">
+    <div class="card border-2 mb-3">
+      <div class="card-header">Veículo</div>
+      <div class="card-body">
+        <form [formGroup]="selectCarForms">
+          <select
+            formControlName="carId"
+            class="form-select form-select-lg text-dark"
+            name=""
+            id=""
+          >
+            <option *ngFor="let vehicle of vehicles" [value]="vehicle.id">
+              {{ vehicle.vehicle }}
+            </option>
+          </select>
+        </form>
+      </div>
+    </div>
+    <div class="card border-2 mb-3">
+      <div class="card-header">Total de Vendas</div>
+      <div class="card-body">
+        <h1 class="card-title">
+          {{ selectedVehicle.volumetotal }}
+        </h1>
+        <p class="card-text">Unidades</p>
+      </div>
+    </div>
+    <div class="card border-2 mb-3">
+      <div class="card-header">Conectados</div>
+      <div class="card-body">
+        <h1 class="card-title">
+          {{ selectedVehicle.connected }}
+        </h1>
+        <p class="card-text">Unidades</p>
+      </div>
+    </div>
+    <div class="card border-2 mb-3">
+      <div class="card-header">Update Software</div>
+      <div class="card-body">
+        <h1 class="card-title">
+          {{ selectedVehicle.softwareUpdates }}
+        </h1>
+        <p class="card-text">Unidades</p>
+      </div>
+    </div>
+  </div>
+  <img src="{{ selectedVehicle.img }}" alt="" />
+</section>

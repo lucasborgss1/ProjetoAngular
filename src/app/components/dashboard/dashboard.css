@@ -1,0 +1,14 @@
+.dashboard img {
+  width: 1200px;
+  height: 600px;
+  position: absolute;
+}
+
+.card {
+  width: 18rem;
+}
+
+.card-title {
+  font-weight: bold;
+  color: #4778ff;
+}
