@@ -6,7 +6,6 @@ section {
   justify-content: center;
   padding: 2rem 0;
   box-sizing: border-box;
-  margin-top: 5rem;
 }
 
 .logo {
@@ -31,6 +30,11 @@ section {
   filter: opacity(0.5);
   max-width: 100vw;
   max-height: 100vh;
+}
+
+main {
+  align-items: center;
+  justify-content: center;
 }
 
 @media (max-width: 768px) {

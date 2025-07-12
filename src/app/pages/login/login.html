@@ -1,64 +1,70 @@
-<section class="container-form-login">
-  <img class="carro" src="img/ranger.png" alt="ranger" />
-  <form class="form-login">
-    <img class="logo-ford" src="img/ford.png" alt="" />
-    <h1 class="title">Boas-vindas</h1>
+<main>
+  <section class="container-form-login">
+    <img class="carro" src="img/ranger.png" alt="ranger" />
+    <form class="form-login">
+      <img class="logo-ford" src="img/ford.png" alt="" />
+      <h1 class="title">Boas-vindas</h1>
 
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Login</label>
-      <input
-        type="text"
-        class="form-control"
-        id="InputLogin"
-        placeholder="Digite seu login"
-        aria-describedby="emailHelp"
-        style="width: 300px; background-color: rgb(0, 0, 0, 0.1)"
-      />
-    </div>
-    <div class="mb-3 position-relative">
-      <label for="exampleInputPassword1" class="form-label">Senha:</label>
-      <input
-        type="password"
-        class="form-control"
-        id="InputPassword"
-        placeholder="Digite sua senha"
-        style="width: 300px; background-color: rgb(0, 0, 0, 0.1)"
-      />
-      <i
-        class="bi bi-eye-slash toggle-password"
-        style="position: absolute; top: 38px; right: 10px; cursor: pointer"
-        (click)="togglePassword()"
-      ></i>
-      <div
-        class="form-text"
-        style="margin-top: 10px; justify-content: space-between; display: flex"
-      >
-        <a href="#">Primeiro Acesso?</a>
-        <a href="#">Esqueceu a senha?</a>
-      </div>
-      <div
-        class="form-check form-switch"
-        style="
-          display: flex;
-          align-items: center;
-
-          gap: 10px;
-        "
-      >
+      <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Login</label>
         <input
-          class="form-check-input"
-          type="checkbox"
-          role="switch"
-          id="switchCheckChecked"
+          type="text"
+          class="form-control"
+          id="InputLogin"
+          placeholder="Digite seu login"
+          aria-describedby="emailHelp"
+          style="width: 300px; background-color: rgb(0, 0, 0, 0.1)"
         />
-        <label class="form-check-label form-text" for="switchCheckChecked"
-          >Logar automaticamente</label
-        >
       </div>
-    </div>
+      <div class="mb-3 position-relative">
+        <label for="exampleInputPassword1" class="form-label">Senha:</label>
+        <input
+          type="password"
+          class="form-control"
+          id="InputPassword"
+          placeholder="Digite sua senha"
+          style="width: 300px; background-color: rgb(0, 0, 0, 0.1)"
+        />
+        <i
+          class="bi bi-eye-slash toggle-password"
+          style="position: absolute; top: 38px; right: 10px; cursor: pointer"
+          (click)="togglePassword()"
+        ></i>
+        <div
+          class="form-text"
+          style="
+            margin-top: 10px;
+            justify-content: space-between;
+            display: flex;
+          "
+        >
+          <a href="#">Primeiro Acesso?</a>
+          <a href="#">Esqueceu a senha?</a>
+        </div>
+        <div
+          class="form-check form-switch"
+          style="
+            display: flex;
+            align-items: center;
 
-    <button type="submit" class="btn btn-primary" style="width: 300px">
-      Entrar
-    </button>
-  </form>
-</section>
+            gap: 10px;
+          "
+        >
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="switchCheckChecked"
+          />
+          <label class="form-check-label form-text" for="switchCheckChecked"
+            >Logar automaticamente</label
+          >
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-primary" style="width: 100%">
+        Entrar
+      </button>
+    </form>
+  </section>
+</main>

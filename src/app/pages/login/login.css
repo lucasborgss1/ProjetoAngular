@@ -30,6 +30,14 @@
   margin-bottom: 3rem;
 }
 
+button {
+  background-color: #503c75;
+}
+
+button:hover {
+  background-color: #402a5c;
+}
+
 @media screen and (max-width: 768px) {
   .container-form-login {
     flex-direction: column;
