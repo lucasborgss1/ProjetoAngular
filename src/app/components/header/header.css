@@ -1,0 +1,13 @@
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  background-color: #1b357e;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
