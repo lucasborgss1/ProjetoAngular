@@ -1,11 +1,9 @@
-.dashboard img {
-  width: 1200px;
-  height: 600px;
-  position: absolute;
+.imagem-carro {
+  width: 800px;
 }
 
 .card {
-  width: 18rem;
+  width: 15rem;
 }
 
 .formulario {
