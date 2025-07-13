@@ -1,0 +1,42 @@
+<table class="car__table">
+  <thead class="car__table-head">
+    <tr class="car__table-row">
+      <th class="car__table-header">Odômetro</th>
+      <th class="car__table-header">Nível de Combustível</th>
+      <th class="car__table-header">Status</th>
+      <th class="car__table-header">Lat.</th>
+      <th class="car__table-header">Long.</th>
+    </tr>
+  </thead>
+
+  <tbody class="car__table-body">
+    <!-- Caso tenha erro -->
+    <tr class="car__table-row" *ngIf="errorMessage">
+      <td class="car__table-cell text-danger fw-bold" colspan="5">
+        {{ errorMessage }}
+      </td>
+    </tr>
+
+    <tr class="car__table-row" *ngIf="!errorMessage && data">
+      <td class="car__table-cell" data-label="odometro">
+        {{ data.odometro + " KM" }}
+      </td>
+      <td class="car__table-cell" data-label="nivelCombustivel">
+        {{ data.nivelCombustivel + " %" }}
+      </td>
+      <td class="car__table-cell" data-label="status">
+        {{ data.status }}
+      </td>
+      <td class="car__table-cell" data-label="latitude">
+        {{ data.lat }}
+      </td>
+      <td class="car__table-cell" data-label="longitude">
+        {{ data.long }}
+      </td>
+    </tr>
+
+    <tr class="car__table-row" *ngIf="!errorMessage && !data">
+      <td class="car__table-cell" colspan="5">Nenhum dado disponível</td>
+    </tr>
+  </tbody>
+</table>
