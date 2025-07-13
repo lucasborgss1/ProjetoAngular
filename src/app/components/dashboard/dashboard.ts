@@ -1,22 +1,30 @@
 import { Component, OnInit } from '@angular/core';
 import { DashboardService } from '../../services/dashboard.service';
-import { Veiculo, Veiculos } from '../../models/veiculo.model';
+import { Veiculo, VeiculoData } from '../../models/veiculo.model';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { Card } from '../card/card';
+import { Table } from '../table/table';
+import { catchError, of } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, Card, Table],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css',
 })
 export class Dashboard implements OnInit {
   vehicles: Veiculo[] = [];
   selectedVehicle!: Veiculo;
-  vehicleData!: Veiculos;
+  vehicleData!: VeiculoData;
+  errorMessage?: string;
 
   selectCarForms = new FormGroup({
     carId: new FormControl(''),
+  });
+
+  vinForm = new FormGroup({
+    vin: new FormControl(''),
   });
 
   constructor(private dashboardService: DashboardService) {}
@@ -33,5 +41,26 @@ export class Dashboard implements OnInit {
       this.selectedVehicle = this.vehicles[Number(id) - 1];
       console.log(this.selectedVehicle);
     });
+  }
+
+  consultarDadosPorVin() {
+    const vin = this.vinForm.controls.vin.value;
+    this.errorMessage = '';
+    if (vin) {
+      this.dashboardService
+        .getVehicleData(vin)
+        .pipe(
+          catchError((error) => {
+            this.errorMessage =
+              'Erro ao buscar dados do veículo: ' +
+              (error?.error?.message || 'Erro desconhecido');
+            this.vehicleData = undefined!;
+            return of(null);
+          })
+        )
+        .subscribe((data) => {
+          if (data) this.vehicleData = data;
+        });
+    }
   }
 }

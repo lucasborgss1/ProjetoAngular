@@ -4,7 +4,7 @@
     <div class="card border-2 mb-3">
       <div class="card-header">Veículo</div>
       <div class="card-body">
-        <form [formGroup]="selectCarForms">
+        <form class="formulario" [formGroup]="selectCarForms">
           <select
             formControlName="carId"
             class="form-select form-select-lg text-dark"
@@ -18,33 +18,39 @@
         </form>
       </div>
     </div>
-    <div class="card border-2 mb-3">
-      <div class="card-header">Total de Vendas</div>
-      <div class="card-body">
-        <h1 class="card-title">
-          {{ selectedVehicle.volumetotal }}
-        </h1>
-        <p class="card-text">Unidades</p>
-      </div>
-    </div>
-    <div class="card border-2 mb-3">
-      <div class="card-header">Conectados</div>
-      <div class="card-body">
-        <h1 class="card-title">
-          {{ selectedVehicle.connected }}
-        </h1>
-        <p class="card-text">Unidades</p>
-      </div>
-    </div>
-    <div class="card border-2 mb-3">
-      <div class="card-header">Update Software</div>
-      <div class="card-body">
-        <h1 class="card-title">
-          {{ selectedVehicle.softwareUpdates }}
-        </h1>
-        <p class="card-text">Unidades</p>
-      </div>
-    </div>
+    <app-card
+      [title]="'Total de Vendas'"
+      [value]="selectedVehicle.volumetotal"
+    />
+    <app-card [title]="'Conectados'" [value]="selectedVehicle.connected" />
+    <app-card
+      [title]="'Update Software'"
+      [value]="selectedVehicle.softwareUpdates"
+    />
   </div>
   <img src="{{ selectedVehicle.img }}" alt="" />
+  <div>
+    <form
+      class="formulario d-flex row g-3 align-items-center"
+      [formGroup]="vinForm"
+    >
+      <div class="col-auto">
+        <label for="inputVin" class="col-form-label">Codigo - Vin: </label>
+      </div>
+      <div class="col-auto">
+        <input
+          type="text"
+          id="inputVin"
+          class="form-control"
+          formControlName="vin"
+        />
+      </div>
+      <div class="col-auto">
+        <button class="btn btn-primary" (click)="consultarDadosPorVin()">
+          Consultar
+        </button>
+      </div>
+    </form>
+    <app-table [data]="vehicleData" [errorMessage]="errorMessage" />
+  </div>
 </section>
