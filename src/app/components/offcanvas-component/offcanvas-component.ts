@@ -117,7 +117,7 @@ export class NgbdOffcanvasContent {
   logout() {
     this.authService.logout();
     setTimeout(() => {
-      this.router.navigate(['/login']);
+      this.router.navigate(['']);
       this.activeOffcanvas.dismiss('Logout click');
     }, 500);
   }
